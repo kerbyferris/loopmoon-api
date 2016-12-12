@@ -8,7 +8,7 @@ app.debug = True
 
 @app.route('/')
 def index():
-    return {'hello': 'worldd'}
+    return {'hello': 'world'}
 
 
 @app.route('/event', methods=['POST'])
@@ -16,6 +16,6 @@ def event():
     request = app.current_request
     event = request.json_body
 
-    # Respond appropriate to Slack request URL challenge
+    # Respond appropriately to Slack request URL challenge
     if event['type'] == 'url_verification':
         return {'challenge': event['challenge']}
